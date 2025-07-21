@@ -1,0 +1,55 @@
+services:
+  # Backend API Service
+  - type: web
+    name: wealth-portfolio-backend
+    env: python
+    region: oregon
+    buildCommand: cd backend && pip install -r requirements.txt
+    startCommand: cd backend && chmod +x start.sh && ./start.sh
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: MONGODB_URL
+        sync: false
+      - key: MYSQL_HOST
+        sync: false
+      - key: MYSQL_PORT
+        value: "3306"
+      - key: MYSQL_USER
+        sync: false
+      - key: MYSQL_PASSWORD
+        sync: false
+      - key: MYSQL_DATABASE
+        value: wealth_transactions
+      - key: COHERE_API_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        value: https://wealth-portfolio-frontend.onrender.com,http://localhost:3000
+      - key: REDIS_URL
+        sync: false
+
+  # Frontend Service
+  - type: web
+    name: wealth-portfolio-frontend
+    env: node
+    region: oregon
+    buildCommand: cd frontend && npm install && npm run build
+    startCommand: cd frontend && npx serve -s build -l $PORT
+    plan: free
+    envVars:
+      - key: REACT_APP_API_BASE_URL
+        value: https://wealth-portfolio-backend.onrender.com
+      - key: NODE_ENV
+        value: production
+      - key: REACT_APP_NAME
+        value: Wealth Portfolio RAG Agent
+
+# Optional: Database services if you prefer Render's managed databases
+# databases:
+#   - name: wealth-portfolio-postgres
+#     plan: free
+#     region: oregon

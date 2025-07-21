@@ -58,7 +58,8 @@ class MySQLConnection:
             
         except Exception as e:
             logger.error(f"❌ Failed to connect to MySQL: {e}")
-            raise
+            logger.warning("⚠️ MySQL connection failed - continuing without MySQL")
+            self.pool = None
     
     async def disconnect(self):
         """Disconnect from MySQL"""
@@ -77,12 +78,16 @@ class MySQLConnection:
                         result = await cursor.fetchone()
                         if result:
                             return {"status": "healthy", "database": "mysql"}
-            return {"status": "disconnected", "database": "mysql"}
+            return {"status": "disconnected", "database": "mysql", "message": "MySQL not connected"}
         except Exception as e:
             return {"status": "unhealthy", "database": "mysql", "error": str(e)}
     
     async def execute_query(self, query: str, params=None):
         """Execute a query and return results"""
+        if not self.pool:
+            logger.warning("MySQL not connected - cannot execute query")
+            return []
+        
         async with self.pool.acquire() as conn:
             async with conn.cursor(aiomysql.DictCursor) as cursor:
                 await cursor.execute(query, params)
