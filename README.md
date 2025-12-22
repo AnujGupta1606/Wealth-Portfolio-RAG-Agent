@@ -259,3 +259,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 **Built with ❤️ for the wealth management industry**
+
+*Last updated: December 2024*
