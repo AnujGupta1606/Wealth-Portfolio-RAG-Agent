@@ -4,7 +4,7 @@ A comprehensive Natural Language Cross-Platform Data Query System for wealth por
 
 ## 🚀 Features
 
-### Core Capabilities
+### Core Capabilities  
 - **Natural Language Processing**: Query complex portfolio data using plain English
 - **Multi-Database Integration**: Seamlessly connects MongoDB (client profiles) and MySQL (transactions)
 - **AI-Powered Analytics**: LangChain-powered RAG system for intelligent responses
