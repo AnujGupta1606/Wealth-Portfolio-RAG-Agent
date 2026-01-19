@@ -1,4 +1,4 @@
-# Wealth Portfolio RAG Agent
+# DevOps Project: Enterprise Wealth Portfolio Analytics Platform
 
 A comprehensive Natural Language Cross-Platform Data Query System for wealth portfolio management, specifically designed for high net worth individuals including film stars and sports personalities with 100+ crore investments.
 
@@ -224,11 +224,11 @@ cd frontend
 npm run build
 ```
 
-⚙️ DevOps, Cloud & Monitoring
+## ⚙️ DevOps, Cloud & Monitoring
 
 This project follows modern DevOps practices to ensure scalability, reliability, and continuous delivery for high-net-worth wealth management systems.
 
-🔁 CI/CD Pipeline (Jenkins)
+## 🔁 CI/CD Pipeline (Jenkins)
 
 Jenkins is used to automate build, test, and deployment pipelines
 
@@ -254,11 +254,11 @@ Deployment to AWS
 
 Ensures fast, consistent, and error-free deployments
 
-☁️ Cloud Infrastructure (AWS)
+## ☁️ Cloud Infrastructure (AWS)
 
 Deployed on Amazon Web Services (AWS) for high availability and scalability
 
-Key AWS services:
+### Key AWS services:
 
 EC2 – Hosting FastAPI backend services
 
@@ -290,7 +290,7 @@ Enables proactive issue detection and performance optimization
 
 Ready for Grafana integration for visual dashboards
 
-🧠 Version Control & Collaboration (Git)
+## 🧠 Version Control & Collaboration (Git)
 
 Git is used for source control and collaboration
 
