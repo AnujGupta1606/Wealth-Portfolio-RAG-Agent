@@ -224,6 +224,88 @@ cd frontend
 npm run build
 ```
 
+⚙️ DevOps, Cloud & Monitoring
+
+This project follows modern DevOps practices to ensure scalability, reliability, and continuous delivery for high-net-worth wealth management systems.
+
+🔁 CI/CD Pipeline (Jenkins)
+
+Jenkins is used to automate build, test, and deployment pipelines
+
+On every Git push:
+
+Backend tests (pytest) are executed
+
+Frontend build (npm run build) is validated
+
+Docker images are built and versioned
+
+Pipeline stages:
+
+Code Checkout
+
+Dependency Installation
+
+Unit & Integration Testing
+
+Docker Image Build
+
+Deployment to AWS
+
+Ensures fast, consistent, and error-free deployments
+
+☁️ Cloud Infrastructure (AWS)
+
+Deployed on Amazon Web Services (AWS) for high availability and scalability
+
+Key AWS services:
+
+EC2 – Hosting FastAPI backend services
+
+RDS (MySQL) – Managed transactional database
+
+Amazon ECR – Docker image repository
+
+S3 – Static asset storage (frontend builds, reports)
+
+IAM – Secure role-based access control
+
+Designed to support enterprise-scale portfolios (100+ crore investments)
+
+📊 Monitoring & Observability (Prometheus)
+
+Prometheus is integrated for real-time monitoring and metrics collection
+
+Tracks:
+
+API response time
+
+Database query performance
+
+Server CPU & memory usage
+
+Request throughput & error rates
+
+Enables proactive issue detection and performance optimization
+
+Ready for Grafana integration for visual dashboards
+
+🧠 Version Control & Collaboration (Git)
+
+Git is used for source control and collaboration
+
+Best practices followed:
+
+Feature-based branching (feature/*)
+
+Clean commit history
+
+Pull request reviews
+
+Enables smooth collaboration between backend, frontend, and DevOps teams
+
+Fully compatible with GitHub / GitLab workflows
+
 ## 📈 Future Enhancements
 
 ### MCP (Model Context Protocol) Integration
